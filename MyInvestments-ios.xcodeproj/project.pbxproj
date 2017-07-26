@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38650CEA1F2827030098A793 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38650CE91F2827030098A793 /* keys.plist */; };
 		38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1456F1F26CC9200984F9B /* AppDelegate.swift */; };
 		38D145721F26CC9200984F9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145711F26CC9200984F9B /* ViewController.swift */; };
 		38D145751F26CC9200984F9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D145731F26CC9200984F9B /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38650CE91F2827030098A793 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		38D1456C1F26CC9200984F9B /* MyInvestments-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyInvestments-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D1456F1F26CC9200984F9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D145711F26CC9200984F9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				38D145A31F281BEE00984F9B /* Support Files */,
 				38D145711F26CC9200984F9B /* ViewController.swift */,
 				38D145731F26CC9200984F9B /* Main.storyboard */,
+				38650CE91F2827030098A793 /* keys.plist */,
 			);
 			path = "MyInvestments-ios";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38650CEA1F2827030098A793 /* keys.plist in Resources */,
 				38D1457A1F26CC9200984F9B /* LaunchScreen.storyboard in Resources */,
 				38D145771F26CC9200984F9B /* Assets.xcassets in Resources */,
 				38D145A21F26D2A900984F9B /* Podfile in Resources */,
