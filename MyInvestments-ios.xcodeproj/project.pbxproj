@@ -107,12 +107,9 @@
 		38D1456E1F26CC9200984F9B /* MyInvestments-ios */ = {
 			isa = PBXGroup;
 			children = (
-				38D1456F1F26CC9200984F9B /* AppDelegate.swift */,
+				38D145A31F281BEE00984F9B /* Support Files */,
 				38D145711F26CC9200984F9B /* ViewController.swift */,
 				38D145731F26CC9200984F9B /* Main.storyboard */,
-				38D145761F26CC9200984F9B /* Assets.xcassets */,
-				38D145781F26CC9200984F9B /* LaunchScreen.storyboard */,
-				38D1457B1F26CC9200984F9B /* Info.plist */,
 			);
 			path = "MyInvestments-ios";
 			sourceTree = "<group>";
@@ -133,6 +130,17 @@
 				38D145911F26CC9200984F9B /* Info.plist */,
 			);
 			path = "MyInvestments-iosUITests";
+			sourceTree = "<group>";
+		};
+		38D145A31F281BEE00984F9B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				38D1456F1F26CC9200984F9B /* AppDelegate.swift */,
+				38D145761F26CC9200984F9B /* Assets.xcassets */,
+				38D145781F26CC9200984F9B /* LaunchScreen.storyboard */,
+				38D1457B1F26CC9200984F9B /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 		BAAEED4E4E9B16843FB2C54A /* Frameworks */ = {
@@ -588,6 +596,7 @@
 				38D145961F26CC9200984F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38D145971F26CC9200984F9B /* Build configuration list for PBXNativeTarget "MyInvestments-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +605,7 @@
 				38D145991F26CC9200984F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38D1459A1F26CC9200984F9B /* Build configuration list for PBXNativeTarget "MyInvestments-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +614,7 @@
 				38D1459C1F26CC9200984F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
