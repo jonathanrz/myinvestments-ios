@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyPlistManager
+import SwiftyJSON
 
 func getEnvironmentVar(_ name: String) -> String? {
 	guard let rawValue = getenv(name) else { return nil }
@@ -33,7 +34,25 @@ class ViewController: UIViewController {
 		
 		Alamofire.request(serverUrl as! String, headers: headers)
 			.responseJSON { response in
-				print(response)
+				var investments: [Investment] = []
+				if((response.result.value) != nil) {
+					let swiftyJsonVar = JSON(response.result.value!)
+					print(swiftyJsonVar)
+					
+					for case let result in swiftyJsonVar.arrayObject! {
+						do {
+							try investments.append(Investment(json: JSON(result)))
+						} catch(SerializationError.missing(let error)) {
+							print(error)
+						} catch(SerializationError.invalid(let error, _)) {
+							print(error)
+						} catch _ {
+							
+						}
+					}
+				}
+				
+				print(investments)
 			}
 			.responseString { response in
 				if let error = response.result.error {

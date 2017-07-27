@@ -5,4 +5,5 @@ use_frameworks!
 target 'MyInvestments-ios' do
 	pod 'Alamofire', '~> 4.4'
 	pod 'SwiftyPlistManager'
+	pod 'SwiftyJSON'
 end

@@ -16,6 +16,7 @@
 		38D145851F26CC9200984F9B /* MyInvestments_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145841F26CC9200984F9B /* MyInvestments_iosTests.swift */; };
 		38D145901F26CC9200984F9B /* MyInvestments_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1458F1F26CC9200984F9B /* MyInvestments_iosUITests.swift */; };
 		38D145A21F26D2A900984F9B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 38D145A11F26D2A900984F9B /* Podfile */; };
+		38E90B341F2975F000DA66C0 /* investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E90B331F2975F000DA66C0 /* investment.swift */; };
 		FBA16DCE1CB22789A8114D95 /* Pods_MyInvestments_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8306D66CE5B684A4310BAC4 /* Pods_MyInvestments_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +52,8 @@
 		38D1458B1F26CC9200984F9B /* MyInvestments-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyInvestments-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D1458F1F26CC9200984F9B /* MyInvestments_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInvestments_iosUITests.swift; sourceTree = "<group>"; };
 		38D145911F26CC9200984F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38D145A11F26D2A900984F9B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		38D145A11F26D2A900984F9B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		38E90B331F2975F000DA66C0 /* investment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = investment.swift; sourceTree = "<group>"; };
 		71865CB831F92FF126554ACE /* Pods-MyInvestments-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyInvestments-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyInvestments-ios/Pods-MyInvestments-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C64FEF1D7ED232840F95DBA3 /* Pods-MyInvestments-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyInvestments-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyInvestments-ios/Pods-MyInvestments-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E8306D66CE5B684A4310BAC4 /* Pods_MyInvestments_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyInvestments_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				38D145711F26CC9200984F9B /* ViewController.swift */,
 				38D145731F26CC9200984F9B /* Main.storyboard */,
 				38650CE91F2827030098A793 /* keys.plist */,
+				38E90B331F2975F000DA66C0 /* investment.swift */,
 			);
 			path = "MyInvestments-ios";
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E90B341F2975F000DA66C0 /* investment.swift in Sources */,
 				38D145721F26CC9200984F9B /* ViewController.swift in Sources */,
 				38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */,
 			);
