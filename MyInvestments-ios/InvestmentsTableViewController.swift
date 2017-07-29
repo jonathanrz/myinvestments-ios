@@ -5,9 +5,12 @@ import SwiftyJSON
 
 class InvestmentsTableViewController: UITableViewController {
 	var investments: [Investment] = []
+	let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		dateFormatter.dateFormat = "dd/MM/yyyy"
 		
 		downloadInvestments()
     }
@@ -74,6 +77,21 @@ class InvestmentsTableViewController: UITableViewController {
 		let investment = investments[indexPath.row]
 		
 		cell.nameLabel.text = investment.name
+		cell.typeLabel.text = investment.type
+		if let dueDate = investment.dueDate {
+			cell.dateLabel.text = dateFormatter.string(from: dueDate)
+		} else {
+			cell.dateLabel.text = ""
+		}
+		
+		switch investment.holder {
+		case "Bradesco":
+			cell.logoImage.image = #imageLiteral(resourceName: "bradesco")
+		case "Easynvest":
+			cell.logoImage.image = #imageLiteral(resourceName: "easynvest")
+		default:
+			cell.logoImage.image = #imageLiteral(resourceName: "unknown")
+		}
 
         return cell
     }
