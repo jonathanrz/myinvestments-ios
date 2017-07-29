@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.5.0)
+  - SwiftyJSON (3.1.4)
+  - SwiftyPlistManager (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - SwiftyJSON
+  - SwiftyPlistManager
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyPlistManager: 1f4b9e82fd8048fddc16ce56bb574bcfccb21561
+
+PODFILE CHECKSUM: 0935cb6d1cc3ffa40f9754d99e297cec6834bf9a
+
+COCOAPODS: 1.2.1
