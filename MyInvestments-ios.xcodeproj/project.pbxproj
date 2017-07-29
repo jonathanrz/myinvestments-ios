@@ -11,7 +11,7 @@
 		38627A801F2C0E460021A104 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */; };
 		38650CEA1F2827030098A793 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38650CE91F2827030098A793 /* keys.plist */; };
 		38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1456F1F26CC9200984F9B /* AppDelegate.swift */; };
-		38D145721F26CC9200984F9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145711F26CC9200984F9B /* ViewController.swift */; };
+		38D145721F26CC9200984F9B /* InvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145711F26CC9200984F9B /* InvestmentViewController.swift */; };
 		38D145751F26CC9200984F9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D145731F26CC9200984F9B /* Main.storyboard */; };
 		38D145771F26CC9200984F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D145761F26CC9200984F9B /* Assets.xcassets */; };
 		38D1457A1F26CC9200984F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D145781F26CC9200984F9B /* LaunchScreen.storyboard */; };
@@ -45,7 +45,7 @@
 		38650CE91F2827030098A793 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		38D1456C1F26CC9200984F9B /* MyInvestments-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyInvestments-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D1456F1F26CC9200984F9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38D145711F26CC9200984F9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38D145711F26CC9200984F9B /* InvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewController.swift; sourceTree = "<group>"; };
 		38D145741F26CC9200984F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38D145761F26CC9200984F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38D145791F26CC9200984F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				38D145A31F281BEE00984F9B /* Support Files */,
-				38D145711F26CC9200984F9B /* ViewController.swift */,
+				38D145711F26CC9200984F9B /* InvestmentViewController.swift */,
 				38D145731F26CC9200984F9B /* Main.storyboard */,
 				38650CE91F2827030098A793 /* keys.plist */,
 				38E90B331F2975F000DA66C0 /* investment.swift */,
@@ -360,7 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38E90B341F2975F000DA66C0 /* investment.swift in Sources */,
-				38D145721F26CC9200984F9B /* ViewController.swift in Sources */,
+				38D145721F26CC9200984F9B /* InvestmentViewController.swift in Sources */,
 				38627A801F2C0E460021A104 /* InvestmentTableViewCell.swift in Sources */,
 				38627A7E1F2C0DC70021A104 /* InvestmentsTableViewController.swift in Sources */,
 				38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */,

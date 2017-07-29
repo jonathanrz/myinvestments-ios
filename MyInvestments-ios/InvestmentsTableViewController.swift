@@ -131,14 +131,29 @@ class InvestmentsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+		
+		switch(segue.identifier ?? "") {
+			case "ShowInvestment":
+				guard let investmentViewController = segue.destination as? InvestmentViewController else {
+					fatalError("Unexpected destination: \(segue.destination)")
+				}
+				
+				guard let selectedCell = sender as? InvestmentTableViewCell else {
+					fatalError("Unexpected sender: \(sender ?? "nil")")
+				}
+				
+				guard let indexPath = tableView.indexPath(for: selectedCell) else {
+					fatalError("The selected cell is not being displayed by the table")
+				}
+				
+				let selectedInvestment = investments[indexPath.row]
+				investmentViewController.investment = selectedInvestment
+		default:
+			fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
+		}
     }
-    */
-
 }
