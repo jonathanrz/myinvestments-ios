@@ -1,63 +1,28 @@
 import UIKit
-import Alamofire
-import SwiftyPlistManager
-import SwiftyJSON
 
 class InvestmentsTableViewController: UITableViewController {
 	var investments: [Investment] = []
 	let dateFormatter = DateFormatter()
+	var server: Server?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		dateFormatter.dateFormat = "dd/MM/yyyy"
 		
-		downloadInvestments()
-    }
-	
-	private func downloadInvestments() {
-		SwiftyPlistManager.shared.start(plistNames: ["keys"], logging: true)
-		guard
-			let authToken = SwiftyPlistManager.shared.fetchValue(for: "auth-token", fromPlistWithName: "keys"),
-			let serverUrl = SwiftyPlistManager.shared.fetchValue(for: "server-url", fromPlistWithName: "keys")
-			else { return }
-		
-		let headers: HTTPHeaders = [
-			"auth-token": authToken as! String,
-			"Accept": "application/json"
-		]
-		
-		Alamofire.request(serverUrl as! String, headers: headers)
-			.responseJSON { response in
-				if((response.result.value) != nil) {
-					let swiftyJsonVar = JSON(response.result.value!)
-					print(swiftyJsonVar)
-					
-					for case let result in swiftyJsonVar.arrayObject! {
-						do {
-							try self.investments.append(Investment(json: JSON(result)))
-						} catch(SerializationError.missing(let error)) {
-							print(error)
-						} catch(SerializationError.invalid(let error, _)) {
-							print(error)
-						} catch _ {
-							
-						}
-					}
+		do {
+			try server = Server()
+			server?.downloadInvestments(completion: { (investments, error) in
+				if let investments = investments {
+					self.investments = investments
+					self.tableView.reloadData()
 				}
-				
-				print(self.investments)
-				self.tableView.reloadData()
-			}
-			.responseString { response in
-				if let error = response.result.error {
-					print(error)
-				}
-				if let value = response.result.value {
-					print(value)
-				}
+			})
+		} catch {
+			print("Couldn't initialize server, possible missing of keys.plist")
 		}
-	}
+		
+    }
 
     // MARK: - Table view data source
 
