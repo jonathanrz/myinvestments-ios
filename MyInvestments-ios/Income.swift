@@ -5,7 +5,7 @@ struct Income {
 	let id: String
 	let value: Double
 	let quantity: Double
-	let date: Date?
+	let date: Date
 	
 	init(json: JSON) throws {
 		guard let id = json["_id"].string else {
@@ -24,6 +24,6 @@ struct Income {
 		self.id = id
 		self.value = value
 		self.quantity = quantity
-		self.date = Server.dateFormatter.date(from: date)
+		self.date = Server.dateFormatter.date(from: date)!
 	}
 }

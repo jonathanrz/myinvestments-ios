@@ -1,10 +1,12 @@
 import UIKit
+import Charts
 
 class InvestmentViewController: UIViewController {
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var dateLabel: UILabel!
 	@IBOutlet weak var holderImage: UIImageView!
+	@IBOutlet weak var incomesValueChart: LineChartView!
 	
 	var server: Server? = nil
 	let dateFormatter = DateFormatter()
@@ -44,6 +46,7 @@ class InvestmentViewController: UIViewController {
 			server?.downloadIncomes(investmentId: investment.id, completion: { (incomes, error) in
 				if let incomes = incomes {
 					print(incomes)
+					self.populateIncomeValueChart(incomes: incomes)
 				} else {
 					print(error!)
 				}
@@ -51,5 +54,18 @@ class InvestmentViewController: UIViewController {
 		} catch {
 			print("Couldn't initialize server, possible missing of keys.plist")
 		}
+	}
+	
+	private func populateIncomeValueChart(incomes: [Income]) {
+		var dataEntries: [ChartDataEntry] = []
+		
+		let incomesSorted = incomes.sorted(by: { $0.date.compare($1.date) == ComparisonResult.orderedAscending })
+		for (index, income) in incomesSorted.enumerated() {
+			dataEntries.append(ChartDataEntry(x: Double(index), y: income.value))
+		}
+		
+		let chartDataSet = LineChartDataSet(values: dataEntries, label: "Income value")
+		let chartData = LineChartData(dataSet: chartDataSet)
+		incomesValueChart.data = chartData
 	}
 }

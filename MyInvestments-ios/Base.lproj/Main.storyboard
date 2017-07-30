@@ -46,6 +46,18 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JH7-8A-qP1" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="226" width="794" height="380"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Incomes by month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzV-b2-0wM">
+                                <rect key="frame" x="20" y="177" width="296" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -53,6 +65,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="S1s-zL-GhZ" id="FiW-Lz-n99"/>
                         <outlet property="holderImage" destination="d2c-Ix-bjR" id="lxN-6N-hpR"/>
+                        <outlet property="incomesValueChart" destination="JH7-8A-qP1" id="QaI-Ts-Tg9"/>
                         <outlet property="nameLabel" destination="iZb-Yg-Wpv" id="hsX-fD-3w4"/>
                         <outlet property="typeLabel" destination="GwV-Kz-hFn" id="AiJ-Sm-PZz"/>
                     </connections>
