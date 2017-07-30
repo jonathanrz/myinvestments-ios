@@ -8,12 +8,12 @@ struct Investment {
 	let type: String
 	let dueDate: Date?
 	
-	init(name: String, type: String, holder: String) {
+	init(name: String, type: String, holder: String, dueDate: Date? = nil) {
 		self.id = ""
 		self.name = name
 		self.type = type
 		self.holder = holder
-		self.dueDate = nil
+		self.dueDate = dueDate
 	}
 	
 	init(json: JSON) throws {
@@ -42,10 +42,22 @@ struct Investment {
 	}
 	
 	func toJSON() -> Dictionary<String, String> {
-		return [
-			"name": self.name,
-			"type": self.type,
-			"holder": self.holder
-		]
+		if let dueDate = dueDate {
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "dd/MM/yyyy"
+			
+			return [
+				"name": self.name,
+				"type": self.type,
+				"holder": self.holder,
+				"due_date": dateFormatter.string(from: dueDate)
+			]
+		} else {
+			return [
+				"name": self.name,
+				"type": self.type,
+				"holder": self.holder
+			]
+		}
 	}
 }
