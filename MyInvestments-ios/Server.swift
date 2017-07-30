@@ -8,6 +8,12 @@ enum InitializationError: Error {
 }
 
 class Server {
+	static var dateFormatter: DateFormatter {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.000Z'"
+		return formatter
+	}
+	
 	let headers: HTTPHeaders
 	let serverUrl: String
 	

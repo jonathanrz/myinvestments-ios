@@ -1,14 +1,17 @@
 import UIKit
 
 class InvestmentsTableViewController: UITableViewController {
+	static var dateFormatter: DateFormatter {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "dd/MM/yyyy"
+		return formatter
+	}
+	
 	var investments: [Investment] = []
-	let dateFormatter = DateFormatter()
 	var server: Server?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		dateFormatter.dateFormat = "dd/MM/yyyy"
 		
 		do {
 			try server = Server()
@@ -44,7 +47,7 @@ class InvestmentsTableViewController: UITableViewController {
 		cell.nameLabel.text = investment.name
 		cell.typeLabel.text = investment.type
 		if let dueDate = investment.dueDate {
-			cell.dateLabel.text = dateFormatter.string(from: dueDate)
+			cell.dateLabel.text = InvestmentsTableViewController.dateFormatter.string(from: dueDate)
 		} else {
 			cell.dateLabel.text = ""
 		}
