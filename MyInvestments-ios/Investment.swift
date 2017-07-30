@@ -1,21 +1,17 @@
 import Foundation
 import SwiftyJSON
 
-enum SerializationError: Error {
-	case missing(String)
-	case invalid(String, Any)
-}
-
 struct Investment {
+	let id: String
 	let holder: String
 	let name: String
 	let type: String
 	let dueDate: Date?
-	let dateFormatter = DateFormatter()
 	
 	init(json: JSON) throws {
-		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'.000Z'"
-		
+		guard let id = json["_id"].string else {
+			throw SerializationError.missing("_id")
+		}
 		guard let holder = json["holder"].string else {
 			throw SerializationError.missing("holder")
 		}
@@ -26,11 +22,12 @@ struct Investment {
 			throw SerializationError.missing("type")
 		}
 		
+		self.id = id
 		self.holder = holder
 		self.name = name
 		self.type = type
 		if let date = json["due_date"].string {
-			self.dueDate = dateFormatter.date(from: date)
+			self.dueDate = Server.dateFormatter.date(from: date)
 		} else {
 			self.dueDate = nil
 		}

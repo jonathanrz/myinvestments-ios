@@ -10,15 +10,18 @@
 		38627A7E1F2C0DC70021A104 /* InvestmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */; };
 		38627A801F2C0E460021A104 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */; };
 		38650CEA1F2827030098A793 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38650CE91F2827030098A793 /* keys.plist */; };
+		3877B9841F2D4AB0001CBFDF /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877B9831F2D4AB0001CBFDF /* Server.swift */; };
+		3877B9891F2E016C001CBFDF /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877B9881F2E016C001CBFDF /* Income.swift */; };
+		3877B98B1F2E01A2001CBFDF /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877B98A1F2E01A2001CBFDF /* Exceptions.swift */; };
 		38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1456F1F26CC9200984F9B /* AppDelegate.swift */; };
-		38D145721F26CC9200984F9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145711F26CC9200984F9B /* ViewController.swift */; };
+		38D145721F26CC9200984F9B /* InvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145711F26CC9200984F9B /* InvestmentViewController.swift */; };
 		38D145751F26CC9200984F9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D145731F26CC9200984F9B /* Main.storyboard */; };
 		38D145771F26CC9200984F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D145761F26CC9200984F9B /* Assets.xcassets */; };
 		38D1457A1F26CC9200984F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D145781F26CC9200984F9B /* LaunchScreen.storyboard */; };
 		38D145851F26CC9200984F9B /* MyInvestments_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D145841F26CC9200984F9B /* MyInvestments_iosTests.swift */; };
 		38D145901F26CC9200984F9B /* MyInvestments_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1458F1F26CC9200984F9B /* MyInvestments_iosUITests.swift */; };
 		38D145A21F26D2A900984F9B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 38D145A11F26D2A900984F9B /* Podfile */; };
-		38E90B341F2975F000DA66C0 /* investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E90B331F2975F000DA66C0 /* investment.swift */; };
+		38E90B341F2975F000DA66C0 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E90B331F2975F000DA66C0 /* Investment.swift */; };
 		FBA16DCE1CB22789A8114D95 /* Pods_MyInvestments_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8306D66CE5B684A4310BAC4 /* Pods_MyInvestments_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +46,12 @@
 		38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewController.swift; sourceTree = "<group>"; };
 		38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
 		38650CE91F2827030098A793 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		3877B9831F2D4AB0001CBFDF /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		3877B9881F2E016C001CBFDF /* Income.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		3877B98A1F2E01A2001CBFDF /* Exceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		38D1456C1F26CC9200984F9B /* MyInvestments-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyInvestments-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D1456F1F26CC9200984F9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38D145711F26CC9200984F9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38D145711F26CC9200984F9B /* InvestmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewController.swift; sourceTree = "<group>"; };
 		38D145741F26CC9200984F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38D145761F26CC9200984F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38D145791F26CC9200984F9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		38D1458F1F26CC9200984F9B /* MyInvestments_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInvestments_iosUITests.swift; sourceTree = "<group>"; };
 		38D145911F26CC9200984F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D145A11F26D2A900984F9B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		38E90B331F2975F000DA66C0 /* investment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = investment.swift; sourceTree = "<group>"; };
+		38E90B331F2975F000DA66C0 /* Investment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 		71865CB831F92FF126554ACE /* Pods-MyInvestments-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyInvestments-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyInvestments-ios/Pods-MyInvestments-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C64FEF1D7ED232840F95DBA3 /* Pods-MyInvestments-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyInvestments-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyInvestments-ios/Pods-MyInvestments-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E8306D66CE5B684A4310BAC4 /* Pods_MyInvestments_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyInvestments_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3877B9851F2E00AC001CBFDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38E90B331F2975F000DA66C0 /* Investment.swift */,
+				3877B9881F2E016C001CBFDF /* Income.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3877B9861F2E00C6001CBFDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */,
+				38D145711F26CC9200984F9B /* InvestmentViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3877B9871F2E00DA001CBFDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		38D145631F26CC9200984F9B = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +147,13 @@
 		38D1456E1F26CC9200984F9B /* MyInvestments-ios */ = {
 			isa = PBXGroup;
 			children = (
+				3877B9871F2E00DA001CBFDF /* Views */,
+				3877B9861F2E00C6001CBFDF /* Controllers */,
+				3877B9851F2E00AC001CBFDF /* Models */,
 				38D145A31F281BEE00984F9B /* Support Files */,
-				38D145711F26CC9200984F9B /* ViewController.swift */,
 				38D145731F26CC9200984F9B /* Main.storyboard */,
-				38650CE91F2827030098A793 /* keys.plist */,
-				38E90B331F2975F000DA66C0 /* investment.swift */,
-				38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */,
-				38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */,
+				3877B9831F2D4AB0001CBFDF /* Server.swift */,
+				3877B98A1F2E01A2001CBFDF /* Exceptions.swift */,
 			);
 			path = "MyInvestments-ios";
 			sourceTree = "<group>";
@@ -147,6 +179,7 @@
 		38D145A31F281BEE00984F9B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				38650CE91F2827030098A793 /* keys.plist */,
 				38D1456F1F26CC9200984F9B /* AppDelegate.swift */,
 				38D145761F26CC9200984F9B /* Assets.xcassets */,
 				38D145781F26CC9200984F9B /* LaunchScreen.storyboard */,
@@ -359,10 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E90B341F2975F000DA66C0 /* investment.swift in Sources */,
-				38D145721F26CC9200984F9B /* ViewController.swift in Sources */,
+				38E90B341F2975F000DA66C0 /* Investment.swift in Sources */,
+				3877B9891F2E016C001CBFDF /* Income.swift in Sources */,
+				38D145721F26CC9200984F9B /* InvestmentViewController.swift in Sources */,
 				38627A801F2C0E460021A104 /* InvestmentTableViewCell.swift in Sources */,
 				38627A7E1F2C0DC70021A104 /* InvestmentsTableViewController.swift in Sources */,
+				3877B98B1F2E01A2001CBFDF /* Exceptions.swift in Sources */,
+				3877B9841F2D4AB0001CBFDF /* Server.swift in Sources */,
 				38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
