@@ -64,4 +64,37 @@ class Server {
 				}
 		}
 	}
+	
+	public func downloadIncomes(investmentId: String, completion: @escaping ([Income]?, String?) ->()) {
+		let path = "/investments/" + investmentId + "/income"
+		Alamofire.request(serverUrl + path, headers: headers)
+			.responseJSON { response in
+				var incomes = [Income]()
+				if((response.result.value) != nil) {
+					let swiftyJsonVar = JSON(response.result.value!)
+					print(swiftyJsonVar)
+					
+					for case let result in swiftyJsonVar.arrayObject! {
+						do {
+							try incomes.append(Income(json: JSON(result)))
+						} catch(SerializationError.missing(let error)) {
+							completion(nil, error)
+						} catch(SerializationError.invalid(let error, _)) {
+							completion(nil, error)
+						} catch _ {
+						}
+					}
+				}
+				
+				completion(incomes, nil)
+			}
+			.responseString { response in
+				if let error = response.result.error {
+					completion(nil, error.localizedDescription)
+				}
+				if let value = response.result.value {
+					completion(nil, value)
+				}
+		}
+	}
 }

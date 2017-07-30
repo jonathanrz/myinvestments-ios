@@ -11,10 +11,10 @@ struct Income {
 		guard let id = json["_id"].string else {
 			throw SerializationError.missing("_id")
 		}
-		guard let value = json["value"].string else {
+		guard let value = json["value"].double else {
 			throw SerializationError.missing("value")
 		}
-		guard let quantity = json["quantity"].string else {
+		guard let quantity = json["quantity"].double else {
 			throw SerializationError.missing("quantity")
 		}
 		guard let date = json["date"].string else {
@@ -22,8 +22,8 @@ struct Income {
 		}
 		
 		self.id = id
-		self.value = Double(value)!
-		self.quantity = Double(quantity)!
+		self.value = value
+		self.quantity = quantity
 		self.date = Server.dateFormatter.date(from: date)
 	}
 }

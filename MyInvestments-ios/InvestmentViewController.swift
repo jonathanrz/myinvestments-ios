@@ -6,6 +6,7 @@ class InvestmentViewController: UIViewController {
 	@IBOutlet weak var dateLabel: UILabel!
 	@IBOutlet weak var holderImage: UIImageView!
 	
+	var server: Server? = nil
 	let dateFormatter = DateFormatter()
 	var investment: Investment?
 
@@ -32,6 +33,23 @@ class InvestmentViewController: UIViewController {
 			default:
 				holderImage.image = #imageLiteral(resourceName: "unknown")
 			}
+			
+			downloadIncomes(investment: investment)
+		}
+	}
+	
+	private func downloadIncomes(investment: Investment) {
+		do {
+			try server = Server()
+			server?.downloadIncomes(investmentId: investment.id, completion: { (incomes, error) in
+				if let incomes = incomes {
+					print(incomes)
+				} else {
+					print(error!)
+				}
+			})
+		} catch {
+			print("Couldn't initialize server, possible missing of keys.plist")
 		}
 	}
 }
