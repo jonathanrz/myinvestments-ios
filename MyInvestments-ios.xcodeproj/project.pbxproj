@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3832DA2F1F2E6C1600C0A736 /* NewInvestmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3832DA2E1F2E6C1600C0A736 /* NewInvestmentViewController.swift */; };
 		38627A7E1F2C0DC70021A104 /* InvestmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */; };
 		38627A801F2C0E460021A104 /* InvestmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */; };
 		38650CEA1F2827030098A793 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38650CE91F2827030098A793 /* keys.plist */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3832DA2E1F2E6C1600C0A736 /* NewInvestmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInvestmentViewController.swift; sourceTree = "<group>"; };
 		38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewController.swift; sourceTree = "<group>"; };
 		38627A7F1F2C0E460021A104 /* InvestmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentTableViewCell.swift; sourceTree = "<group>"; };
 		38650CE91F2827030098A793 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				38627A7D1F2C0DC70021A104 /* InvestmentsTableViewController.swift */,
 				38D145711F26CC9200984F9B /* InvestmentViewController.swift */,
+				3832DA2E1F2E6C1600C0A736 /* NewInvestmentViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				3877B98B1F2E01A2001CBFDF /* Exceptions.swift in Sources */,
 				3877B9841F2D4AB0001CBFDF /* Server.swift in Sources */,
 				38D145701F26CC9200984F9B /* AppDelegate.swift in Sources */,
+				3832DA2F1F2E6C1600C0A736 /* NewInvestmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

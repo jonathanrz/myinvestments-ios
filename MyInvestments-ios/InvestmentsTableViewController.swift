@@ -120,6 +120,8 @@ class InvestmentsTableViewController: UITableViewController {
 				
 				let selectedInvestment = investments[indexPath.row]
 				investmentViewController.investment = selectedInvestment
+			case "AddInvestment":
+				break
 		default:
 			fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
 		}
