@@ -114,4 +114,23 @@ class Server {
 				}
 		}
 	}
+	
+	public func createInvestment(investmentId: String, income: Income, completion: @escaping (Income?, Error?) ->()) {
+		let path = "/investments/" + investmentId + "/income"
+		Alamofire.request(serverUrl + path, method: .post, parameters: income.toJSON(), encoding: JSONEncoding.default, headers: headers)
+			.responseJSON { response in
+				print(response)
+				let swiftyJsonVar = JSON(response.result.value!)
+				
+				do {
+					try completion(Income(json: JSON(swiftyJsonVar.object)), nil)
+				} catch(SerializationError.missing(let error)) {
+					print(error)
+				} catch(SerializationError.invalid(let error, _)) {
+					print(error)
+				} catch _ {
+					
+				}
+		}
+	}
 }

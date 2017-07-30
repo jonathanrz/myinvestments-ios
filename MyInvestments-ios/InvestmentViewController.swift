@@ -12,6 +12,7 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 	var server: Server? = nil
 	let dateFormatter = DateFormatter()
 	var investment: Investment?
+	var incomes: [Income]? = nil
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,14 +42,47 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		
+		switch(segue.identifier ?? "") {
+		case "AddIncome":
+			guard let viewController = segue.destination as? NewIncomeViewController else {
+				fatalError("Unexpected destination: \(segue.destination)")
+			}
+			if let incomes = incomes {
+				if incomes.count > 0 {
+					viewController.lastIncome = incomes[incomes.count - 1]
+				}
+			}
+			
+			break
+		default:
+			fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
+		}
+	}
+	
+	@IBAction func unwindToInvestment(sender: UIStoryboardSegue) {
+		if let sourceViewController = sender.source as? NewIncomeViewController, let income = sourceViewController.income {
+			
+			server?.createInvestment(investmentId: investment!.id, income: income, completion: { (income, error) in
+				if let income = income {
+					self.incomes!.append(income)
+					self.populateCharts(self.incomes!)
+				} else {
+					print(error!)
+				}
+			})
+		}
+	}
+	
 	private func downloadIncomes(investment: Investment) {
 		do {
 			try server = Server()
 			server?.downloadIncomes(investmentId: investment.id, completion: { (incomes, error) in
 				if let incomes = incomes {
-					print(incomes)
-					self.populateIncomeValueChart(incomes: incomes)
-					self.populateInvestmentValueChart(incomes: incomes)
+					self.incomes = incomes.sorted(by: { $0.date.compare($1.date) == ComparisonResult.orderedAscending })
+					self.populateCharts(self.incomes!)
 				} else {
 					print(error!)
 				}
@@ -58,11 +92,15 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 		}
 	}
 	
-	private func populateIncomeValueChart(incomes: [Income]) {
+	private func populateCharts(_ incomes: [Income]) {
+		populateIncomeValueChart(incomes)
+		populateInvestmentValueChart(incomes)
+	}
+	
+	private func populateIncomeValueChart(_ incomes: [Income]) {
 		var dataEntries: [ChartDataEntry] = []
 		
-		let incomesSorted = incomes.sorted(by: { $0.date.compare($1.date) == ComparisonResult.orderedAscending })
-		for income in incomesSorted {
+		for income in incomes {
 			dataEntries.append(ChartDataEntry(x: income.date.timeIntervalSince1970, y: income.value))
 		}
 		
@@ -74,13 +112,13 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 		incomesValueChart.leftAxis.valueFormatter = self
 		incomesValueChart.rightAxis.valueFormatter = self
 		incomesValueChart.chartDescription?.text = "Income by month"
+		incomesValueChart.notifyDataSetChanged()
 	}
 	
-	private func populateInvestmentValueChart(incomes: [Income]) {
+	private func populateInvestmentValueChart(_ incomes: [Income]) {
 		var dataEntries: [ChartDataEntry] = []
 		
-		let incomesSorted = incomes.sorted(by: { $0.date.compare($1.date) == ComparisonResult.orderedAscending })
-		for income in incomesSorted {
+		for income in incomes {
 			dataEntries.append(ChartDataEntry(x: income.date.timeIntervalSince1970, y: income.value / income.quantity))
 		}
 		
@@ -92,6 +130,7 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 		investmentValueChart.leftAxis.valueFormatter = self
 		investmentValueChart.rightAxis.valueFormatter = self
 		investmentValueChart.chartDescription?.text = "Investment value by month"
+		investmentValueChart.notifyDataSetChanged()
 	}
 	
 	func stringForValue(_ value: Double, axis: AxisBase?) -> String {
