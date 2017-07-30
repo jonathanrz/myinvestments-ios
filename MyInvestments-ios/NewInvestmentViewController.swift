@@ -6,6 +6,7 @@ class NewInvestmentViewController: UIViewController {
 	@IBOutlet weak var nameTextView: UITextField!
 	@IBOutlet weak var typeTextView: UITextField!
 	@IBOutlet weak var holderTextView: UITextField!
+	@IBOutlet weak var dueDatePicker: UIDatePicker!
 	
 	var investment: Investment?
 
@@ -31,8 +32,12 @@ class NewInvestmentViewController: UIViewController {
 		let name = nameTextView.text ?? ""
 		let type = typeTextView.text ?? ""
 		let holder = holderTextView.text ?? ""
-		
-		investment = Investment(name: name, type: type, holder: holder)
+		let dueDate = dueDatePicker.date
+		if dueDate > Date() {
+			investment = Investment(name: name, type: type, holder: holder, dueDate: dueDate)
+		} else {
+			investment = Investment(name: name, type: type, holder: holder)
+		}
 	}
 
     /*
