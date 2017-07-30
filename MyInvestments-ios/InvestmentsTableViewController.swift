@@ -132,7 +132,6 @@ class InvestmentsTableViewController: UITableViewController {
 			
 			let newIndexPath = IndexPath(row: investments.count, section: 0)
 			
-			print(investment)
 			server?.createInvestment(investment: investment, completion: { (investment, error) in
 				if let investment = investment {
 					self.investments.append(investment)
