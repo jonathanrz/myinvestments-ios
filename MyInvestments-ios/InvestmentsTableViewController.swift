@@ -126,4 +126,14 @@ class InvestmentsTableViewController: UITableViewController {
 			fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
 		}
     }
+	
+	@IBAction func unwindToInvestmentList(sender: UIStoryboardSegue) {
+		if let sourceViewController = sender.source as? NewInvestmentViewController, let investment = sourceViewController.investment {
+			
+			let newIndexPath = IndexPath(row: investments.count, section: 0)
+			
+			investments.append(investment)
+			tableView.insertRows(at: [newIndexPath], with: .automatic)
+		}
+	}
 }

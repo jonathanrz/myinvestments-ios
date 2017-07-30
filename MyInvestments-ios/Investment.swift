@@ -2,14 +2,14 @@ import Foundation
 import SwiftyJSON
 
 struct Investment {
-	let id: String?
+	let id: String
 	let holder: String
 	let name: String
 	let type: String
 	let dueDate: Date?
 	
 	init(name: String, type: String, holder: String) {
-		self.id = nil
+		self.id = ""
 		self.name = name
 		self.type = type
 		self.holder = holder
