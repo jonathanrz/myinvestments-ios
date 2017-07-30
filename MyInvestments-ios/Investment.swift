@@ -8,6 +8,14 @@ struct Investment {
 	let type: String
 	let dueDate: Date?
 	
+	init(name: String, type: String, holder: String) {
+		self.id = ""
+		self.name = name
+		self.type = type
+		self.holder = holder
+		self.dueDate = nil
+	}
+	
 	init(json: JSON) throws {
 		guard let id = json["_id"].string else {
 			throw SerializationError.missing("_id")
@@ -31,5 +39,13 @@ struct Investment {
 		} else {
 			self.dueDate = nil
 		}
+	}
+	
+	func toJSON() -> Dictionary<String, String> {
+		return [
+			"name": self.name,
+			"type": self.type,
+			"holder": self.holder
+		]
 	}
 }

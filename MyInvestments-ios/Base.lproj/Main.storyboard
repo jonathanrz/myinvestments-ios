@@ -73,6 +73,87 @@
             </objects>
             <point key="canvasLocation" x="1696.4028776978419" y="884.89208633093529"/>
         </scene>
+        <!--New Investment-->
+        <scene sceneID="QId-n3-wmp">
+            <objects>
+                <viewController id="a3I-21-o50" customClass="NewInvestmentViewController" customModule="MyInvestments_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3WA-od-w95"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfa-fa-XpM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="95Z-eB-JUl">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-2F-23b">
+                                <rect key="frame" x="20" y="120" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsI-yx-oOD">
+                                <rect key="frame" x="83" y="111" width="731" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-ZC-h0o">
+                                <rect key="frame" x="20" y="170" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfc-l9-Udp">
+                                <rect key="frame" x="83" y="161" width="731" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Holder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmm-1c-YGX">
+                                <rect key="frame" x="20" y="221" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qa-fE-sI9">
+                                <rect key="frame" x="83" y="212" width="731" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Investment" id="jMJ-uS-foe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Eh9-wb-gTa">
+                            <connections>
+                                <segue destination="ruT-iG-l6E" kind="unwind" unwindAction="unwindToInvestmentListWithSender:" id="g4o-OD-gRD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Xd-pa-6y8">
+                            <connections>
+                                <segue destination="ruT-iG-l6E" kind="unwind" unwindAction="unwindToInvestmentListWithSender:" id="reD-oA-6bg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="holderTextView" destination="2qa-fE-sI9" id="bTD-Df-lkA"/>
+                        <outlet property="nameTextView" destination="bsI-yx-oOD" id="AUW-hi-iA5"/>
+                        <outlet property="saveButton" destination="9Xd-pa-6y8" id="DKM-LI-RaN"/>
+                        <outlet property="typeTextView" destination="hfc-l9-Udp" id="dun-pP-wKu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmw-fj-unm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ruT-iG-l6E" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2465.4676258992808" y="884.89208633093529"/>
+        </scene>
         <!--Investments-->
         <scene sceneID="CMv-nv-XZR">
             <objects>
@@ -131,7 +212,13 @@
                             <outlet property="delegate" destination="TZl-zM-Kj5" id="bwT-nK-yGW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Investments" id="Jh3-UD-9nS"/>
+                    <navigationItem key="navigationItem" title="Investments" id="Jh3-UD-9nS">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="AB3-xX-6Pe">
+                            <connections>
+                                <segue destination="a3I-21-o50" kind="show" identifier="AddInvestment" id="eu0-MB-SPQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5a-Ia-u2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,7 +258,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggk-ES-9wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="885"/>
+            <point key="canvasLocation" x="1697" y="1661"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vRz-yb-f1H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YGe-Kf-YXd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w1b-GH-sWk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a3I-21-o50" kind="relationship" relationship="rootViewController" id="R1x-Y4-nLh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6E-bH-Smq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2466" y="1661"/>
         </scene>
     </scenes>
     <resources>
@@ -179,5 +284,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cvl-3c-icV"/>
+        <segue reference="eu0-MB-SPQ"/>
     </inferredMetricsTieBreakers>
 </document>

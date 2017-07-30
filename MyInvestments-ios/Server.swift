@@ -14,8 +14,8 @@ class Server {
 		return formatter
 	}
 	
-	let headers: HTTPHeaders
 	let serverUrl: String
+	let headers: HTTPHeaders
 	
 	init() throws {
 		SwiftyPlistManager.shared.start(plistNames: ["keys"], logging: true)
@@ -38,7 +38,6 @@ class Server {
 				var investments = [Investment]()
 				if((response.result.value) != nil) {
 					let swiftyJsonVar = JSON(response.result.value!)
-					print(swiftyJsonVar)
 					
 					for case let result in swiftyJsonVar.arrayObject! {
 						do {
@@ -63,6 +62,24 @@ class Server {
 					print(value)
 				}
 		}
+	}
+	
+	public func createInvestment(investment: Investment, completion: @escaping (Investment?, Error?) ->()) {
+		Alamofire.request(serverUrl + "/investments", method: .post, parameters: investment.toJSON(), encoding: JSONEncoding.default, headers: headers)
+			.responseJSON { response in
+				print(response)
+				let swiftyJsonVar = JSON(response.result.value!)
+			
+				do {
+					try completion(Investment(json: JSON(swiftyJsonVar.object)), nil)
+				} catch(SerializationError.missing(let error)) {
+					print(error)
+				} catch(SerializationError.invalid(let error, _)) {
+					print(error)
+				} catch _ {
+					
+				}
+			}
 	}
 	
 	public func downloadIncomes(investmentId: String, completion: @escaping ([Income]?, String?) ->()) {
