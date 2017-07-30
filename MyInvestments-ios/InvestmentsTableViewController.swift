@@ -132,8 +132,15 @@ class InvestmentsTableViewController: UITableViewController {
 			
 			let newIndexPath = IndexPath(row: investments.count, section: 0)
 			
-			investments.append(investment)
-			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			print(investment)
+			server?.createInvestment(investment: investment, completion: { (investment, error) in
+				if let investment = investment {
+					self.investments.append(investment)
+					self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+				} else {
+					print(error!)
+				}
+			})
 		}
 	}
 }

@@ -40,4 +40,12 @@ struct Investment {
 			self.dueDate = nil
 		}
 	}
+	
+	func toJSON() -> Dictionary<String, String> {
+		return [
+			"name": self.name,
+			"type": self.type,
+			"holder": self.holder
+		]
+	}
 }
