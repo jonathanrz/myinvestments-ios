@@ -7,4 +7,5 @@ target 'MyInvestments-ios' do
 	pod 'SwiftyPlistManager'
 	pod 'SwiftyJSON'
 	pod 'Charts'
+	pod 'SideMenu'
 end

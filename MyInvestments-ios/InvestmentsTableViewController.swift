@@ -122,6 +122,8 @@ class InvestmentsTableViewController: UITableViewController {
 				investmentViewController.investment = selectedInvestment
 			case "AddInvestment":
 				break
+			case "ShowMenu":
+				break
 		default:
 			fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
 		}
