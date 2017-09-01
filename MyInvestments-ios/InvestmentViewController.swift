@@ -34,6 +34,10 @@ class InvestmentViewController: UIViewController, IAxisValueFormatter, IValueFor
 				holderImage.image = #imageLiteral(resourceName: "bradesco")
 			case "Easynvest":
 				holderImage.image = #imageLiteral(resourceName: "easynvest")
+            case "Clear":
+                holderImage.image = #imageLiteral(resourceName: "clear")
+            case "Monetus":
+                holderImage.image = #imageLiteral(resourceName: "monetus")
 			default:
 				holderImage.image = #imageLiteral(resourceName: "unknown")
 			}

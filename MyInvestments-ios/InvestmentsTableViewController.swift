@@ -57,6 +57,10 @@ class InvestmentsTableViewController: UITableViewController {
 			cell.logoImage.image = #imageLiteral(resourceName: "bradesco")
 		case "Easynvest":
 			cell.logoImage.image = #imageLiteral(resourceName: "easynvest")
+        case "Clear":
+            cell.logoImage.image = #imageLiteral(resourceName: "clear")
+        case "Monetus":
+            cell.logoImage.image = #imageLiteral(resourceName: "monetus")
 		default:
 			cell.logoImage.image = #imageLiteral(resourceName: "unknown")
 		}
